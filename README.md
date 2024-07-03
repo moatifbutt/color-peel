@@ -3,4 +3,4 @@
 
 <hr>
 
-![Example Image](assets/cp_results_updated.jpg)
+![teaser](assets/cp_results_updated.jpg)
