@@ -1,0 +1,18 @@
+[
+  {
+    "instance_prompt":     ["a photo of <s1*> shape in <c1*> color"],
+    "instance_data_dir": "data/w2c_3d_data/normal/cone_red"
+  },
+  {
+    "instance_prompt":     ["a photo of <s2*> shape in <c2*> color"],
+    "instance_data_dir": "data/w2c_3d_data/normal/sphere_green"
+  },
+  {
+    "instance_prompt":     ["a photo of <s1*> shape in <c3*> color"],
+    "instance_data_dir": "data/w2c_3d_data/normal/cone_blue"
+  },
+  {
+    "instance_prompt":     ["a photo of <s2*> shape in <c4*> color"],
+    "instance_data_dir": "data/w2c_3d_data/normal/sphere_yellow"
+  }
+]
