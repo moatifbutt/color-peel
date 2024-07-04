@@ -4,6 +4,4 @@
 <hr>
 
 ![teaser](assets/teaser_4.jpg)
-<div style="text-align: justify;">
 Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D geometries with target colors for color learning. This facilitates the disentanglement of color and shape concepts, allowing for personalized color usage in image generation.
-</div>
