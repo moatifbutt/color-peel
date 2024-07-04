@@ -23,3 +23,7 @@ And initialize an 🤗Accelerate environment with:
 ```sh
 accelerate config
 ```
+Or for a default accelerate configuration without answering questions about your environment
+```sh
+accelerate config default
+```
