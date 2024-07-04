@@ -12,9 +12,10 @@ Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D 
 git clone https://github.com/huggingface/diffusers
 cd diffusers
 pip install -e .
-
+```
 Then cd in the example folder and run
 
 ```sh
 pip install -r requirements.txt
 pip install clip-retrieval
+```
