@@ -19,3 +19,7 @@ Then cd in the example folder and run
 pip install -r requirements.txt
 pip install clip-retrieval
 ```
+And initialize an 🤗Accelerate environment with:
+```sh
+accelerate config
+```
