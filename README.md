@@ -40,6 +40,7 @@ accelerate config default
 
 ## Dataset
 We provide two sample datasets for learning colors from 2D and 3D shapes. These datasets are available in data repository along with the `concepts.json` which contain information regarding the class images and their corresponding conditioning prompts.
+
 **Custom Dataset (2D)**: Users can also create their own dataset using the following script.
 
 ```sh
