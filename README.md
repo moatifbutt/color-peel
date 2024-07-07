@@ -47,3 +47,17 @@ We provide two sample datasets for learning colors from 2D and 3D shapes. These 
 python src/draw_shapes.py 512 --shapes circle rectangle --rgb_values "235,33,33" "33,235,33" "33,33,235" "235,235,33" --out data/dataset
 ```
 **Custom Dataset (3D)**: We design our 3D shapes in blender. The rendering script will be released soon.
+
+## Train
+Now, we are all set to start training. After setting up the paths in `train/train.sh`, run the following.
+
+```sh
+./src/train/_train_mc_colorpeel.sh
+```
+
+## Test
+After completing the training, the model will be saved in `models` directory. Run the following command for inference.
+
+```sh
+python src/test.py --exp model_name
+```
