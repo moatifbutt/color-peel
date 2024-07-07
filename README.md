@@ -8,7 +8,7 @@ Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D 
 
 <hr>
 
-## Installations
+## Installations (for local execution with PyTorch)
 Before running the scripts, make sure to install diffusers from source. Note that ColorPeel is developed on **Diffusers 0.17.0**.
 To install diffusers from source, do the following steps:
 
