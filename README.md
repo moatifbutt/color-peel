@@ -9,7 +9,7 @@ Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D 
 <hr>
 
 ## Installations
-
+Before running the scripts, make sure to install diffusers from source. Note that ColorPeel is developed on Diffusers 0.17.0
 ```sh
 git clone https://github.com/huggingface/diffusers
 cd diffusers
