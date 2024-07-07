@@ -42,6 +42,7 @@ accelerate config default
 We provide two sample datasets for learning colors from 2D and 3D shapes. These datasets are available in data repository along with the `src/concept_json/instances_3d.json` which contain information regarding the class images and their corresponding conditioning prompts.
 
 **Custom Dataset (2D)**: Users can also create their own 2D dataset using the following script.
+**Custom Dataset (3D)**: We design our 3D shapes in blender. The rendering script will be released soon.
 
 ```sh
 python src/draw_shapes.py 512 --shapes circle rectangle --rgb_values "235,33,33" "33,235,33" "33,33,235" "235,235,33" --out data/dataset
