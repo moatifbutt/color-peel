@@ -9,23 +9,31 @@ Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D 
 <hr>
 
 ## Installations
-Before running the scripts, make sure to install diffusers from source. Note that ColorPeel is developed on Diffusers 0.17.0
+Before running the scripts, make sure to install diffusers from source. Note that ColorPeel is developed on **Diffusers 0.17.0**.
+To install diffusers from source, do the following steps:
+
 ```sh
 git clone https://github.com/huggingface/diffusers
 cd diffusers
 pip install -e .
 ```
-Then cd in the example folder and run
+
+After successful installation, download/clone the **ColorPeel** repoistory.
 
 ```sh
+https://github.com/moatifbutt/color-peel.git
+cd color-peel
 pip install -r requirements.txt
-pip install clip-retrieval
 ```
+
 And initialize an 🤗Accelerate environment with:
+
 ```sh
 accelerate config
 ```
-Or for a default accelerate configuration without answering questions about your environment
+
+Or for a default accelerate configuration without answering questions about your environment.
+
 ```sh
 accelerate config default
 ```
