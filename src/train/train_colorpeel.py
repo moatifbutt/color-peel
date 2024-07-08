@@ -32,10 +32,12 @@ from diffusers import (
     DiffusionPipeline,
     DDPMScheduler,
     DPMSolverMultistepScheduler,
-    UNet2DConditionModel,
 )
-from diffusers.loaders import AttnProcsLayers
-from diffusers.models.attention_processor import CustomDiffusionAttnProcessor, CustomDiffusionXFormersAttnProcessor
+
+from custom_attention.unet_2d_condition_custom import UNet2DConditionModel
+from custom_attention.loaders_custom import AttnProcsLayers
+from custom_attention.attention_processor_custom import CustomDiffusionAttnProcessor, CustomDiffusionXFormersAttnProcessor
+
 from diffusers.optimization import get_scheduler
 from diffusers.utils import check_min_version, is_wandb_available
 from diffusers.utils.import_utils import is_xformers_available
@@ -166,12 +168,6 @@ def collate_fn(examples, with_prior_preservation):
     input_ids = [example["instance_prompt_ids"] for example in examples]
     pixel_values = [example["instance_images"] for example in examples]
     mask = [example["mask"] for example in examples]
-    # Concat class and instance examples for prior preservation.
-    # We do this to avoid doing two forward passes.
-    if with_prior_preservation:
-        input_ids += [example["class_prompt_ids"] for example in examples]
-        pixel_values += [example["class_images"] for example in examples]
-        mask += [example["class_mask"] for example in examples]
 
     input_ids = torch.cat(input_ids, dim=0)
     pixel_values = torch.stack(pixel_values)
@@ -234,20 +230,6 @@ class CustomDiffusionDataset(Dataset):
                 (x, concept["instance_prompt"]) for x in Path(concept["instance_data_dir"]).iterdir() if x.is_file()
             ]
             self.instance_images_path.extend(inst_img_path)
-
-            if with_prior_preservation:
-                class_data_root = Path(concept["class_data_dir"])
-                if os.path.isdir(class_data_root):
-                    class_images_path = list(class_data_root.iterdir())
-                    class_prompt = [concept["class_prompt"] for _ in range(len(class_images_path))]
-                else:
-                    with open(class_data_root, "r") as f:
-                        class_images_path = f.read().splitlines()
-                    with open(concept["class_prompt"], "r") as f:
-                        class_prompt = f.read().splitlines()
-
-                class_img_path = [(x, y) for (x, y) in zip(class_images_path, class_prompt)]
-                self.class_images_path.extend(class_img_path[:num_class_images])
 
         # random.shuffle(self.instance_images_path)
         self.num_instance_images = len(self.instance_images_path)
@@ -641,19 +623,6 @@ def parse_args(input_args=None):
     env_local_rank = int(os.environ.get("LOCAL_RANK", -1))
     if env_local_rank != -1 and env_local_rank != args.local_rank:
         args.local_rank = env_local_rank
-
-    if args.with_prior_preservation:
-        if args.concepts_list is None:
-            if args.class_data_dir is None:
-                raise ValueError("You must specify a data directory for class images.")
-            if args.class_prompt is None:
-                raise ValueError("You must specify prompt for class images.")
-    else:
-        # logger is not available yet
-        if args.class_data_dir is not None:
-            warnings.warn("You need not use --class_data_dir without --with_prior_preservation.")
-        if args.class_prompt is not None:
-            warnings.warn("You need not use --class_prompt without --with_prior_preservation.")
 
     return args
 
