@@ -54,7 +54,7 @@ python src/draw_shapes.py 512 --shapes circle rectangle --rgb_values "235,33,33"
 Now, we are all set to start training. After setting up the paths in `train/train.sh`, run the following.
 
 ```sh
-./src/train/_train_mc_colorpeel.sh
+./src/train/train_colorpeel.sh
 ```
 
 ## Test
