@@ -1,12 +1,13 @@
 # ColorPeel: Color Prompt Learning with Diffusion Models via  Color and Shape Disentanglement [ECCV 2024]
 
 ![teaser](assets/teaser_4.jpg)
-Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D geometries with target colors for color learning. This facilitates the disentanglement of color and shape concepts, allowing for personalized color usage in image generation.
 
-### ColorPeel: Color Prompt Learning with Diffusion Models via  Color and Shape Disentanglement
-[Muhammad Atif Butt](https://scholar.google.com/citations?user=vf7PeaoAAAAJ&hl=en), [Kai Wang](https://scholar.google.com/citations?user=j14vd0wAAAAJ&hl=en), [Javier Vazquez-Corral](https://scholar.google.com/citations?user=gjnuPMoAAAAJ&hl=en), and [Joost van de Weijer](https://scholar.google.com/citations?user=Gsw2iUEAAAAJ&hl=en)
+***TL;DB*** Given the RGB triplets or color coordinates, ColorPeel generates basic 2D or 3D geometries with target colors for color learning. This facilitates the disentanglement of color and shape concepts, allowing for personalized color usage in image generation.
 
-[paper] [[arXiv](http://arxiv.org/abs/2407.07197)] [[webpage](https://moatifbutt.github.io/colorpeel/)]
+## ColorPeel: Color Prompt Learning with Diffusion Models via  Color and Shape Disentanglement
+[Muhammad Atif Butt](https://scholar.google.com/citations?user=vf7PeaoAAAAJ&hl=en), [Kai Wang](https://scholar.google.com/citations?user=j14vd0wAAAAJ&hl=en), [Javier Vazquez-Corral](https://scholar.google.com/citations?user=gjnuPMoAAAAJ&hl=en),  [Joost van de Weijer](https://scholar.google.com/citations?user=Gsw2iUEAAAAJ&hl=en)
+
+[[Paper](http://arxiv.org/pdf/2407.07197)] [[arXiv](http://arxiv.org/abs/2407.07197)] [[Project](https://moatifbutt.github.io/colorpeel/)]
 
 <hr>
 
@@ -62,4 +63,21 @@ After completing the training, the model will be saved in `models` directory. Ru
 
 ```sh
 python src/test.py --exp model_name
+```
+
+# Future Work
+We have experimented with mapping various colors from color spaces into color prompt embeddings. However, we encountered convergence issues that we are currently unable to resolve. For those interested in learning multiple colors for practical applications, we suggest developing a training scheme based on Textual Inversion, which has demonstrated satisfactory performance. As for the task of mapping color spaces into text embeddings, we leave this as a future research direction for the community to explore.
+
+
+# Citation
+
+If you like our work, please cite our paper:
+
+```
+@inproceedings{butt2024colorpeel, 
+    title={ColorPeel: Color Prompt Learning with Diffusion Models via Color and Shape Disentanglement}, 
+    author={Muhammad Atif Butt and Kai Wang and Javier Vazquez-Corral and Joost van de Weijer},
+    booktitle={European Conference on Computer Vision}, 
+    year={2024}
+}
 ```
