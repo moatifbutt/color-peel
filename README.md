@@ -7,7 +7,7 @@
 ## ColorPeel: Color Prompt Learning with Diffusion Models via  Color and Shape Disentanglement
 [Muhammad Atif Butt](https://scholar.google.com/citations?user=vf7PeaoAAAAJ&hl=en), [Kai Wang](https://scholar.google.com/citations?user=j14vd0wAAAAJ&hl=en), [Javier Vazquez-Corral](https://scholar.google.com/citations?user=gjnuPMoAAAAJ&hl=en),  [Joost van de Weijer](https://scholar.google.com/citations?user=Gsw2iUEAAAAJ&hl=en)
 
-[[Paper](http://arxiv.org/pdf/2407.07197)] [[arXiv](http://arxiv.org/abs/2407.07197)] [[Project](https://moatifbutt.github.io/colorpeel/)]
+[[Paper](http://arxiv.org/pdf/2407.07197)] [[arXiv](http://arxiv.org/abs/2407.07197)] [[Project](https://moatifbutt.github.io/colorpeel/)] [[Poster](https://github.com/moatifbutt/color-peel/blob/main/assets/ECCV2024_ColorPeel_.pdf)]
 
 <hr>
 
